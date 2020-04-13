@@ -2,12 +2,14 @@ import React from 'react';
 import './App.css';
 import Customerlist from "./components/Customerlist";
 import 'typeface-roboto';
+import {NavBar} from "./components/ui/Navbar";
 
 function App() {
   return (
-    <div className="App">
-        <Customerlist/>
-    </div>
+        <React.Fragment>
+            <NavBar/>
+            <Customerlist/>
+        </React.Fragment>
   );
 }
 

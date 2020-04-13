@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf79673a-4526-4257-99be-f1ae53a58278" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/Navbar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/Navdrawer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Customers.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Trainings.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Customerlist.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Customerlist.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586769056448</updated>
-      <workItem from="1586769058931" duration="10741000" />
+      <workItem from="1586769058931" duration="13411000" />
     </task>
     <servers />
   </component>
@@ -81,22 +82,22 @@
       <screen x="0" y="0" width="1500" height="970" />
     </state>
     <state x="481" y="233" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1500.970@0.0.1500.970" timestamp="1586784735611" />
-    <state width="1480" height="238" key="GridCell.Tab.0.bottom" timestamp="1586784751181">
+    <state width="1480" height="238" key="GridCell.Tab.0.bottom" timestamp="1586787529964">
       <screen x="0" y="0" width="1500" height="970" />
     </state>
-    <state width="1480" height="238" key="GridCell.Tab.0.bottom/0.0.1500.970@0.0.1500.970" timestamp="1586784751181" />
-    <state width="1480" height="238" key="GridCell.Tab.0.center" timestamp="1586784751180">
+    <state width="1480" height="238" key="GridCell.Tab.0.bottom/0.0.1500.970@0.0.1500.970" timestamp="1586787529964" />
+    <state width="1480" height="238" key="GridCell.Tab.0.center" timestamp="1586787529964">
       <screen x="0" y="0" width="1500" height="970" />
     </state>
-    <state width="1480" height="238" key="GridCell.Tab.0.center/0.0.1500.970@0.0.1500.970" timestamp="1586784751180" />
-    <state width="1480" height="238" key="GridCell.Tab.0.left" timestamp="1586784751180">
+    <state width="1480" height="238" key="GridCell.Tab.0.center/0.0.1500.970@0.0.1500.970" timestamp="1586787529964" />
+    <state width="1480" height="238" key="GridCell.Tab.0.left" timestamp="1586787529963">
       <screen x="0" y="0" width="1500" height="970" />
     </state>
-    <state width="1480" height="238" key="GridCell.Tab.0.left/0.0.1500.970@0.0.1500.970" timestamp="1586784751180" />
-    <state width="1480" height="238" key="GridCell.Tab.0.right" timestamp="1586784751180">
+    <state width="1480" height="238" key="GridCell.Tab.0.left/0.0.1500.970@0.0.1500.970" timestamp="1586787529963" />
+    <state width="1480" height="238" key="GridCell.Tab.0.right" timestamp="1586787529964">
       <screen x="0" y="0" width="1500" height="970" />
     </state>
-    <state width="1480" height="238" key="GridCell.Tab.0.right/0.0.1500.970@0.0.1500.970" timestamp="1586784751180" />
+    <state width="1480" height="238" key="GridCell.Tab.0.right/0.0.1500.970@0.0.1500.970" timestamp="1586787529964" />
     <state x="409" y="225" key="run.anything.popup" timestamp="1586777542750">
       <screen x="0" y="0" width="1500" height="970" />
     </state>
