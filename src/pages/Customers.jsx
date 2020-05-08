@@ -4,8 +4,8 @@ import 'typeface-roboto';
 
 export default function Customers() {
     return (
-        <div>
+        <React.Fragment>
             <Customerlist/>
-        </div>
+        </React.Fragment>
     );
 }
