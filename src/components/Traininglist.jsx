@@ -40,7 +40,7 @@ export default function Traininglist() {
 
     return (
         <div>
-            <MaterialTable columns={columns} data={trainings} title="Customers"/>
+            <MaterialTable columns={columns} data={trainings} title="Trainings"/>
         </div>
     )
 
