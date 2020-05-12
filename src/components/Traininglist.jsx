@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import MaterialTable from "material-table";
 import moment from "moment";
 import Snackbar from "@material-ui/core/Snackbar";
+import AddTraining from "./ui/AddTraining";
 
 export default function Traininglist() {
 
@@ -14,9 +15,9 @@ export default function Traininglist() {
     }, []);
 
     const getTrainings = () => {
-        fetch('https://customerrest.herokuapp.com/api/trainings')
+        fetch('https://customerrest.herokuapp.com/gettrainings')
             .then(response => response.json())
-            .then(data => setTrainings(data.content))
+            .then(data => setTrainings(data))
             .catch(err => console.error(err))
     };
 
@@ -43,7 +44,7 @@ export default function Traininglist() {
             field: "date",
             render: row => (
                 <span>
-                        {moment(row.date).format("LLLL")}
+                        {moment(row.date).format("LL")}
                     </span>)
         },
         {
@@ -55,8 +56,16 @@ export default function Traininglist() {
             field: "activity"
         },
         {
+            title: "First name",
+            field: "customer.firstname",
+        },
+        {
+            title: "Last name",
+            field: "customer.lastname",
+        },
+        {
             render: row => (<button size="small" color="primary"
-                                    onClick={() => deleteTraining(row.links[0].href)}>Delete</button>)
+                                    onClick={() => deleteTraining("https://customerrest.herokuapp.com/api/trainings/" + row.id)}>Delete</button>)
         }
     ];
 

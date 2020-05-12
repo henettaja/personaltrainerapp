@@ -2,6 +2,9 @@ import React, {useState, useEffect} from "react";
 import MaterialTable from "material-table";
 import Snackbar from "@material-ui/core/Snackbar";
 import AddCustomer from "./ui/AddCustomer";
+import AddTraining from "./ui/AddTraining";
+import Button from "@material-ui/core/Button";
+import moment from "moment";
 
 export default function Customerlist() {
 
@@ -51,6 +54,32 @@ export default function Customerlist() {
             .catch(err => console.log(err));
     };
 
+    const addTraining = (training) => {
+
+        const dateTime = training.date + " " + "22:00";
+        console.log(dateTime);
+        const toISO = moment(dateTime, "DD-MM-YYYY HH:mm").toISOString();
+        console.log(toISO);
+
+        training.date = toISO;
+
+        fetch('https://customerrest.herokuapp.com/api//trainings',
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify(training)
+            }
+        )
+            .then(_ => getCustomers())
+            .then(_ => {
+                setSnack("Training added succesfully");
+                setSnackStatus(true);
+            })
+            .catch(err => console.log(err));
+    };
+
 
     const handleClose = () => {
         setSnackStatus(false);
@@ -86,8 +115,17 @@ export default function Customerlist() {
             field: "phone"
         },
         {
-            render: row => (<button size="small" color="primary"
-                                    onClick={() => deleteCustomer(row.links[0].href)}>Delete</button>)
+            sorting: false,
+            render: row => (<Button size="small" color="primary"
+                                    onClick={() => deleteCustomer(row.links[0].href)}>Delete</Button>)
+        },
+        {
+            sorting: false,
+            render: row => (
+                <div>
+                    <AddTraining addTraining={addTraining} customer={row.links[1].href}/>
+                </div>
+            )
         }
     ];
 

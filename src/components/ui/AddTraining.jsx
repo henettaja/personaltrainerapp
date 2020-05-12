@@ -6,25 +6,26 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import moment from "moment";
 
-export default function AddCustomer(props) {
+export default function AddTraining(props) {
 
     const [open, setOpen] = useState(false);
-    const [training, setTraining] = useState({date: "", duration: "", activity: "", postcode: "", city: "", email: "", phone: ""});
+    const [training, setTraining] = useState({date: "", duration: "", activity: "", customer: props.customer});
 
     const handleClickOpen = () => {
         setOpen(true);
     };
 
     const handleClose = () => {
-        props.addCustomer(training);
+        props.addTraining(training);
         setOpen(false);
-        setTraining({firstname: "", lastname: "", streetaddress: "", postcode: "", city: "", email: "", phone: ""})
+        setTraining({date: moment(training.date,"DD-MM-YYYY").format("YYYY-MM-DD"), duration: "", activity: "", customer: null})
     };
 
     const handleCancel = () => {
         setOpen(false);
-        setTraining({firstname: "", lastname: "", streetaddress: "", postcode: "", city: "", email: "", phone: ""})
+        setTraining({date: "", duration: "", activity: "", customer: null})
     };
 
     const inputChanged = (event) => {
@@ -33,11 +34,11 @@ export default function AddCustomer(props) {
 
     return (
         <div>
-            <Button style={{margin: 10}} variant="outlined" color="primary" onClick={handleClickOpen}>
-                Add a customer
+            <Button style={{margin: 10}} size="small" color="primary" onClick={handleClickOpen}>
+                Add a training
             </Button>
             <Dialog open={open} onClose={handleCancel} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">Add a customer</DialogTitle>
+                <DialogTitle id="form-dialog-title">Add a training</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
                         Fill in the information below and click "save".
@@ -45,65 +46,29 @@ export default function AddCustomer(props) {
                     <TextField
                         autoFocus
                         margin="dense"
-                        id="firstname"
-                        name="firstname"
-                        value={training.firstname}
+                        id="date"
+                        name="date"
+                        value={training.date}
                         onChange={inputChanged}
-                        label="First name"
+                        label={`Date (eg. ${moment().format("DD.MM.YYYY")})`}
                         fullWidth
                     />
                     <TextField
                         margin="dense"
-                        id="lastname"
-                        name="lastname"
-                        value={training.lastname}
+                        id="duration"
+                        name="duration"
+                        value={training.duration}
                         onChange={inputChanged}
-                        label="Last name"
+                        label="Duration in minutes"
                         fullWidth
                     />
                     <TextField
                         margin="dense"
-                        id="streetaddress"
-                        name="streetaddress"
-                        value={training.streetaddress}
+                        id="activity"
+                        name="activity"
+                        value={training.activity}
                         onChange={inputChanged}
-                        label="Street address"
-                        fullWidth
-                    />
-                    <TextField
-                        margin="dense"
-                        id="postcode"
-                        name="postcode"
-                        value={training.postcode}
-                        onChange={inputChanged}
-                        label="Post code"
-                        fullWidth
-                    />
-                    <TextField
-                        margin="dense"
-                        id="city"
-                        name="city"
-                        value={training.city}
-                        onChange={inputChanged}
-                        label="City"
-                        fullWidth
-                    />
-                    <TextField
-                        margin="dense"
-                        id="email"
-                        name="email"
-                        value={training.email}
-                        onChange={inputChanged}
-                        label="Email"
-                        fullWidth
-                    />
-                    <TextField
-                        margin="dense"
-                        id="phone"
-                        name="phone"
-                        value={training.phone}
-                        onChange={inputChanged}
-                        label="Phone number"
+                        label="Activity"
                         fullWidth
                     />
                 </DialogContent>
