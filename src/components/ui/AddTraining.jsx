@@ -10,25 +10,25 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 export default function AddCustomer(props) {
 
     const [open, setOpen] = useState(false);
-    const [customer, setCustomer] = useState({firstname: "", lastname: "", streetaddress: "", postcode: "", city: "", email: "", phone: ""});
+    const [training, setTraining] = useState({date: "", duration: "", activity: "", postcode: "", city: "", email: "", phone: ""});
 
     const handleClickOpen = () => {
         setOpen(true);
     };
 
     const handleClose = () => {
-        props.addCustomer(customer);
+        props.addCustomer(training);
         setOpen(false);
-        setCustomer({firstname: "", lastname: "", streetaddress: "", postcode: "", city: "", email: "", phone: ""})
+        setTraining({firstname: "", lastname: "", streetaddress: "", postcode: "", city: "", email: "", phone: ""})
     };
 
     const handleCancel = () => {
         setOpen(false);
-        setCustomer({firstname: "", lastname: "", streetaddress: "", postcode: "", city: "", email: "", phone: ""})
+        setTraining({firstname: "", lastname: "", streetaddress: "", postcode: "", city: "", email: "", phone: ""})
     };
 
     const inputChanged = (event) => {
-        setCustomer({...customer, [event.target.name]: event.target.value})
+        setTraining({...training, [event.target.name]: event.target.value})
     };
 
     return (
@@ -47,7 +47,7 @@ export default function AddCustomer(props) {
                         margin="dense"
                         id="firstname"
                         name="firstname"
-                        value={customer.firstname}
+                        value={training.firstname}
                         onChange={inputChanged}
                         label="First name"
                         fullWidth
@@ -56,7 +56,7 @@ export default function AddCustomer(props) {
                         margin="dense"
                         id="lastname"
                         name="lastname"
-                        value={customer.lastname}
+                        value={training.lastname}
                         onChange={inputChanged}
                         label="Last name"
                         fullWidth
@@ -65,7 +65,7 @@ export default function AddCustomer(props) {
                         margin="dense"
                         id="streetaddress"
                         name="streetaddress"
-                        value={customer.streetaddress}
+                        value={training.streetaddress}
                         onChange={inputChanged}
                         label="Street address"
                         fullWidth
@@ -74,7 +74,7 @@ export default function AddCustomer(props) {
                         margin="dense"
                         id="postcode"
                         name="postcode"
-                        value={customer.postcode}
+                        value={training.postcode}
                         onChange={inputChanged}
                         label="Post code"
                         fullWidth
@@ -83,7 +83,7 @@ export default function AddCustomer(props) {
                         margin="dense"
                         id="city"
                         name="city"
-                        value={customer.city}
+                        value={training.city}
                         onChange={inputChanged}
                         label="City"
                         fullWidth
@@ -92,7 +92,7 @@ export default function AddCustomer(props) {
                         margin="dense"
                         id="email"
                         name="email"
-                        value={customer.email}
+                        value={training.email}
                         onChange={inputChanged}
                         label="Email"
                         fullWidth
@@ -101,7 +101,7 @@ export default function AddCustomer(props) {
                         margin="dense"
                         id="phone"
                         name="phone"
-                        value={customer.phone}
+                        value={training.phone}
                         onChange={inputChanged}
                         label="Phone number"
                         fullWidth

@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf79673a-4526-4257-99be-f1ae53a58278" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/ui/AddCustomer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/AddTraining.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Customerlist.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Customerlist.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Traininglist.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Traininglist.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/AddCustomer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/AddCustomer.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +39,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\henri\Programming\Frontend\personaltrainerapp\src\components\ui" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
@@ -66,7 +71,7 @@
       <updated>1586769056448</updated>
       <workItem from="1586769058931" duration="14271000" />
       <workItem from="1588939889445" duration="17867000" />
-      <workItem from="1589282572630" duration="318000" />
+      <workItem from="1589282572630" duration="5237000" />
     </task>
     <servers />
   </component>

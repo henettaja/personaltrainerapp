@@ -93,7 +93,7 @@ export default function Customerlist() {
 
     return (
         <div>
-            <AddCustomer addCustomer={AddCustomer}/>
+            <AddCustomer addCustomer={addCustomer}/>
             <MaterialTable columns={columns} data={customers} title="Customers"/>
             <Snackbar
                 open={snackStatus}
