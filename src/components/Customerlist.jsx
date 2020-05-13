@@ -2,8 +2,6 @@ import React, {useState, useEffect} from "react";
 import MaterialTable from "material-table";
 import Snackbar from "@material-ui/core/Snackbar";
 import AddCustomer from "./ui/AddCustomer";
-import AddTraining from "./ui/AddTraining";
-import Button from "@material-ui/core/Button";
 import moment from "moment";
 
 export default function Customerlist() {
@@ -24,16 +22,13 @@ export default function Customerlist() {
     };
 
     const deleteCustomer = (link) => {
-        if (window.confirm("Are you sure?")) {
-
-            fetch(link, {method: "DELETE"})
+         fetch(link, {method: "DELETE"})
                 .then(_ => getCustomers())
                 .then(_ => {
                     setSnack("Customer deleted successfully");
                     setSnackStatus(true);
                 })
                 .catch(err => console.log(err));
-        }
     };
 
     const addCustomer = (customer) => {
@@ -48,7 +43,24 @@ export default function Customerlist() {
         )
             .then(_ => getCustomers())
             .then(_ => {
-                setSnack("Customer added succesfully");
+                setSnack("Customer info added succesfully");
+                setSnackStatus(true);
+            })
+            .catch(err => console.log(err));
+    };
+
+    const updateCustomer = (link, customer) => {
+        fetch(link, {
+                method: "PUT",
+                headers: {
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify(customer)
+            }
+        )
+            .then(_ => getCustomers())
+            .then(_ => {
+                setSnack("Customer info updated succesfully");
                 setSnackStatus(true);
             })
             .catch(err => console.log(err));
@@ -114,25 +126,42 @@ export default function Customerlist() {
             title: "Phone number",
             field: "phone"
         },
-        {
-            sorting: false,
-            render: row => (<Button size="small" color="primary"
-                                    onClick={() => deleteCustomer(row.links[0].href)}>Delete</Button>)
-        },
-        {
-            sorting: false,
-            render: row => (
-                <div>
-                    <AddTraining addTraining={addTraining} customer={row.links[1].href}/>
-                </div>
-            )
-        }
     ];
 
     return (
         <div>
             <AddCustomer addCustomer={addCustomer}/>
-            <MaterialTable columns={columns} data={customers} title="Customers"/>
+            <MaterialTable columns={columns} data={customers} title="Customers"
+                           editable={{
+                               onRowAdd: newData =>
+                                   new Promise((resolve, reject) => {
+                                       setTimeout(() => {
+                                           {
+                                               addCustomer(newData);
+                                           }
+                                           resolve();
+                                       }, 1000);
+                                   }),
+                               onRowUpdate: (newData, oldData) =>
+                                   new Promise((resolve, reject) => {
+                                       setTimeout(() => {
+                                           {
+                                               updateCustomer(oldData.links[0].href, newData);
+                                           }
+                                           resolve();
+                                       }, 1000);
+                                   }),
+                               onRowDelete: oldData =>
+                                   new Promise((resolve, reject) => {
+                                       setTimeout(() => {
+                                           {
+                                               deleteCustomer(oldData.links[0].href);
+                                           }
+                                           resolve();
+                                       }, 1000);
+                                   })
+                           }}
+            />
             <Snackbar
                 open={snackStatus}
                 autoHideDuration={3000}

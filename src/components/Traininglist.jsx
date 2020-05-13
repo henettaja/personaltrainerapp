@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import MaterialTable from "material-table";
 import moment from "moment";
 import Snackbar from "@material-ui/core/Snackbar";
-import AddTraining from "./ui/AddTraining";
 
 export default function Traininglist() {
 
@@ -22,7 +21,6 @@ export default function Traininglist() {
     };
 
     const deleteTraining = (link) => {
-        if (window.confirm("Are you sure?")) {
 
             fetch(link, {method: "DELETE"})
                 .then(_ => getTrainings())
@@ -31,7 +29,6 @@ export default function Traininglist() {
                     setSnackStatus(true);
                 })
                 .catch(err => console.log(err));
-        }
     };
 
     const handleClose = () => {
@@ -63,15 +60,24 @@ export default function Traininglist() {
             title: "Last name",
             field: "customer.lastname",
         },
-        {
-            render: row => (<button size="small" color="primary"
-                                    onClick={() => deleteTraining("https://customerrest.herokuapp.com/api/trainings/" + row.id)}>Delete</button>)
-        }
     ];
 
     return (
         <div>
-            <MaterialTable columns={columns} data={trainings} title="Trainings"/>
+            <MaterialTable columns={columns} data={trainings} title="Trainings"
+                           editable={{
+                               isEditable: rowData => rowData.name === "", // None of the rows are editable
+                               onRowDelete: oldData =>
+                                   new Promise((resolve, reject) => {
+                                       setTimeout(() => {
+                                           {
+                                               deleteTraining("https://customerrest.herokuapp.com/api/trainings/" + oldData.id);
+                                           }
+                                           resolve();
+                                       }, 1000);
+                                   })
+                           }}
+            />
             <Snackbar
                 open={snackStatus}
                 autoHideDuration={3000}
