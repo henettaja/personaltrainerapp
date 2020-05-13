@@ -22,7 +22,7 @@ export class NavBar extends React.Component {
     render() {
         return (
             <div className="App">
-                <AppBar position="static">
+                <AppBar position="sticky">
                     <Toolbar>
                         <IconButton
                             color="inherit"

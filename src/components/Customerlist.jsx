@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import MaterialTable from "material-table";
 import Snackbar from "@material-ui/core/Snackbar";
 import AddCustomer from "./ui/AddCustomer";
+import AddTraining from "./ui/AddTraining";
 import moment from "moment";
 
 export default function Customerlist() {
@@ -68,6 +69,7 @@ export default function Customerlist() {
 
     const addTraining = (training) => {
 
+        // eslint-disable-next-line no-useless-concat
         const dateTime = training.date + " " + "22:00";
         console.log(dateTime);
         const toISO = moment(dateTime, "DD-MM-YYYY HH:mm").toISOString();
@@ -126,37 +128,38 @@ export default function Customerlist() {
             title: "Phone number",
             field: "phone"
         },
+        {
+            render: row => (
+                <div>
+                    <AddTraining addTraining={addTraining} customer={row.links[1].href}/>
+                </div>
+            )
+        },
     ];
 
     return (
         <div>
             <AddCustomer addCustomer={addCustomer}/>
-            <MaterialTable columns={columns} data={customers} title="Customers"
+            <MaterialTable columns={columns} data={customers} title="Customers" addRowPosition="first"
                            editable={{
                                onRowAdd: newData =>
                                    new Promise((resolve, reject) => {
                                        setTimeout(() => {
-                                           {
-                                               addCustomer(newData);
-                                           }
+                                           addCustomer(newData);
                                            resolve();
                                        }, 1000);
                                    }),
                                onRowUpdate: (newData, oldData) =>
                                    new Promise((resolve, reject) => {
                                        setTimeout(() => {
-                                           {
-                                               updateCustomer(oldData.links[0].href, newData);
-                                           }
+                                           updateCustomer(oldData.links[0].href, newData);
                                            resolve();
                                        }, 1000);
                                    }),
                                onRowDelete: oldData =>
                                    new Promise((resolve, reject) => {
                                        setTimeout(() => {
-                                           {
-                                               deleteCustomer(oldData.links[0].href);
-                                           }
+                                           deleteCustomer(oldData.links[0].href);
                                            resolve();
                                        }, 1000);
                                    })

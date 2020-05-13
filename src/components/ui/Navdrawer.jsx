@@ -3,7 +3,7 @@ import Drawer from "@material-ui/core/Drawer";
 import {Link, BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Customers from "../../pages/Customers";
 import Trainings from "../../pages/Trainings";
-
+import Calendar from "../../pages/Calendar";
 export class Navdrawer extends React.Component {
     render() {
         return (
@@ -18,6 +18,9 @@ export class Navdrawer extends React.Component {
                     </Route>
                     <Route path="/trainings">
                         <Trainings/>
+                    </Route>
+                    <Route path="/calendar">
+                        <Calendar/>
                     </Route>
                 </Switch>
 
@@ -36,6 +39,9 @@ export class Navdrawer extends React.Component {
                             </Link>
                             <Link to="/trainings">
                                 <li>Trainings</li>
+                            </Link>
+                            <Link to="/calendar">
+                                <li>Calendar</li>
                             </Link>
                         </ul>
                     </div>

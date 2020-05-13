@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf79673a-4526-4257-99be-f1ae53a58278" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/Calendar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Customerlist.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Customerlist.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Traininglist.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Traininglist.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Trainings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Trainings.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Navdrawer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Navdrawer.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +74,7 @@
       <updated>1586769056448</updated>
       <workItem from="1586769058931" duration="14271000" />
       <workItem from="1588939889445" duration="17867000" />
-      <workItem from="1589282572630" duration="18298000" />
+      <workItem from="1589282572630" duration="24175000" />
     </task>
     <servers />
   </component>
@@ -78,10 +82,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="498" y="276" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586776991249">
+    <state x="498" y="276" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589378581173">
       <screen x="0" y="0" width="1500" height="970" />
     </state>
-    <state x="498" y="276" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.970@0.0.1500.970" timestamp="1586776991249" />
+    <state x="498" y="276" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.970@0.0.1500.970" timestamp="1589378581173" />
     <state x="481" y="233" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586784735611">
       <screen x="0" y="0" width="1500" height="970" />
     </state>
@@ -106,6 +110,10 @@
       <screen x="0" y="0" width="1500" height="970" />
     </state>
     <state x="252" y="129" key="SettingsEditor/0.0.1500.970@0.0.1500.970" timestamp="1588956008369" />
+    <state x="556" y="398" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589377040830">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state x="556" y="398" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.970@0.0.1500.970" timestamp="1589377040830" />
     <state x="410" y="226" key="run.anything.popup" timestamp="1588956131973">
       <screen x="0" y="0" width="1500" height="970" />
     </state>

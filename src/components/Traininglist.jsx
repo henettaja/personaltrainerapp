@@ -22,13 +22,13 @@ export default function Traininglist() {
 
     const deleteTraining = (link) => {
 
-            fetch(link, {method: "DELETE"})
-                .then(_ => getTrainings())
-                .then(_ => {
-                    setSnack("Training deleted successfully");
-                    setSnackStatus(true);
-                })
-                .catch(err => console.log(err));
+        fetch(link, {method: "DELETE"})
+            .then(_ => getTrainings())
+            .then(_ => {
+                setSnack("Training deleted successfully");
+                setSnackStatus(true);
+            })
+            .catch(err => console.log(err));
     };
 
     const handleClose = () => {
@@ -70,9 +70,7 @@ export default function Traininglist() {
                                onRowDelete: oldData =>
                                    new Promise((resolve, reject) => {
                                        setTimeout(() => {
-                                           {
-                                               deleteTraining("https://customerrest.herokuapp.com/api/trainings/" + oldData.id);
-                                           }
+                                           deleteTraining("https://customerrest.herokuapp.com/api/trainings/" + oldData.id);
                                            resolve();
                                        }, 1000);
                                    })
