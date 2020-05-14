@@ -11,16 +11,16 @@ import moment from "moment";
 export default function AddTraining(props) {
 
     const [open, setOpen] = useState(false);
-    const [training, setTraining] = useState({date: "", duration: "", activity: "", customer: props.customer.links[0].href});
+    const [training, setTraining] = useState({date: "", duration: "", activity: "", customer: ""});
 
     const handleClickOpen = () => {
         setOpen(true);
     };
 
     const handleClose = () => {
-        props.addTraining(training);
+        props.addTraining({...training, customer: props.customer.links[0].href});
         setOpen(false);
-        setTraining({date: moment(training.date,"DD-MM-YYYY").format("YYYY-MM-DD"), duration: "", activity: "", customer: null})
+        setTraining({date: moment(training.date,"DD-MM-YYYY").format("YYYY-MM-DD"), duration: "", activity: ""})
     };
 
     const handleCancel = () => {

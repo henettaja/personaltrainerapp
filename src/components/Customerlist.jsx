@@ -134,7 +134,7 @@ export default function Customerlist() {
             field: 'links[0].href',
             render: row => (
                 <div>
-                    <AddTraining addTraining={addTraining} customer={row.links[0].href}/>
+                    <AddTraining addTraining={addTraining} customer={row}/>
                 </div>
             )
         },
