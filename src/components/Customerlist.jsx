@@ -129,9 +129,12 @@ export default function Customerlist() {
             field: "phone"
         },
         {
+            sorting: false,
+            editable: "never",
+            field: 'links[0].href',
             render: row => (
                 <div>
-                    <AddTraining addTraining={addTraining} customer={row.links[1].href}/>
+                    <AddTraining addTraining={addTraining} customer={row.links[0].href}/>
                 </div>
             )
         },

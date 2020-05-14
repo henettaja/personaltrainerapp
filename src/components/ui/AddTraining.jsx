@@ -11,7 +11,7 @@ import moment from "moment";
 export default function AddTraining(props) {
 
     const [open, setOpen] = useState(false);
-    const [training, setTraining] = useState({date: "", duration: "", activity: "", customer: props.customer});
+    const [training, setTraining] = useState({date: "", duration: "", activity: "", customer: props.customer.links[0].href});
 
     const handleClickOpen = () => {
         setOpen(true);
