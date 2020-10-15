@@ -1,3 +1,8 @@
+# Personal trainer application
+A react front-end to a personal trainer application that supports adding customers, scheduling appointments etc.
+
+Task Case:  Personal Trainer company needs a front end app for their customer database. Database contains info about customers and their trainings. They have REST API and documentation that contains all information needed for front end development. Task is to implement a front end for them using React. or Vue.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
